@@ -1,0 +1,64 @@
+.calculator {
+  user-select : none;
+  width : 400px;
+  height : 400px;
+  background-color : #4e89ae;
+  padding : 30px;
+  display: flex;
+  flex-direction : column;
+  gap : 30px;
+}
+
+.display {
+  height : 100px;
+  background-color : #EEEEEE;
+}
+
+.input {
+  flex : auto;
+  display: flex;
+  gap: 10px;
+}
+
+.input-left {
+  flex : 5;
+  display: flex;
+  flex-direction : column;
+  gap : 10px;
+}
+
+.input-right {
+  flex : 3;
+  display: flex;
+  flex-direction : column;
+  gap : 10px;
+}
+
+.keyRow {
+  flex: auto;
+  display : flex;
+  gap : 10px;
+}
+
+.key{
+  flex : 1; 
+  display : flex;
+  justify-content : center;
+  align-items : center;
+  font-family :'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size : 30px;
+} 
+
+.input-left .key{
+  background-color : #43658B;
+}
+
+.input-right .key{
+  background-color : #FFA372;
+}
+
+.input-right .key[key-type='del'],
+.input-right .key[key-type='clr']
+ {
+  background-color : #ED6663;
+}
