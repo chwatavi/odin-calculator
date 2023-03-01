@@ -88,7 +88,6 @@ function pressKey(e){
         calculator.mode = 'opr';
         calculator.opr = label;
         calculator.neg = false;
-        console.log('updated');
       }
       break;
     case 'neg':
@@ -149,7 +148,6 @@ function pressKey(e){
       console.log('error');
   }
   updateDisplay(type);
-  console.log(calculator.prev, calculator.cur, calculator.mode, calculator.opr);
 }
 
 function computeValue(prev, cur, opr){
@@ -185,20 +183,16 @@ function computeValue(prev, cur, opr){
   }
   if (output >= 1e8 || output <= -1e7){
     output = 'err';
-    console.log('error');
   }
   return output;
 }
 
 function tryAppend(label, inFront=false){
-  console.log(typeof calculator.cur, calculator.cur.length)
   if (calculator.cur.length < calculator.len){
     if (inFront){
       calculator.cur = label + calculator.cur;
     }else{
-      console.log('append time');
       calculator.cur = String(calculator.cur + label);
-      console.log(typeof calculator.cur);
     }
     return true;
   }
@@ -213,7 +207,6 @@ function updateDisplay(type){
   }else{
     let overflow = displayValue.length - calculator.len;
     if (overflow > 0){
-      console.log('overflow', overflow, displayValue);
       let decPlace = displayValue.length - displayValue.indexOf('.') - 1;
       if (calculator.neg){
         decPlace--;
